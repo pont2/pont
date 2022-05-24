@@ -19,10 +19,13 @@ export const Page: React.FC<PageProps> = (props) => {
 
   return (
     <div className="pont-ui-page">
-      {(selectedMeta as PontSpec.Interface)?.path ? <ApiModules /> : <ApiModules module={currSpec?.mods[0]} />}
       {(selectedMeta as PontSpec.BaseClass)?.schema ? (
         <BaseClass selectedClass={selectedMeta as PontSpec.BaseClass} />
-      ) : null}
+      ) : (selectedMeta as PontSpec.Interface)?.path ? (
+        <ApiModules />
+      ) : (
+        <ApiModules module={currSpec?.mods[0]} />
+      )}
     </div>
   );
 };

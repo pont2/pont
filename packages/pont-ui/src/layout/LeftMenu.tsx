@@ -12,8 +12,9 @@ import { LayoutContext } from "./context";
 export class LeftMenuProps {}
 
 export const LeftMenu: React.FC<LeftMenuProps> = (props) => {
-  const { selectedMeta, currSpec, changeCurrSpec, changeSelectedMeta, specs } = LayoutContext.useContainer();
-
+  const { selectedMeta, currSpec, changeCurrSpec, changeSelectedMeta, specs, changeSelectModule } =
+    LayoutContext.useContainer();
+  console.log(currSpec);
   const [inputValue, changeInputValue] = React.useState("");
   const [searchValue, _changeSearchValue] = React.useState("");
   const changeSearchValue = React.useCallback((val: any) => {
@@ -56,7 +57,10 @@ export const LeftMenu: React.FC<LeftMenuProps> = (props) => {
                   }
                   key={api.name}
                   id={api.name}
-                  onClick={() => changeSelectedMeta(api)}
+                  onClick={() => {
+                    changeSelectedMeta(api);
+                    changeSelectModule(mod);
+                  }}
                 >
                   <div className="api-name">
                     <div className="name">{api.name}</div>
@@ -76,7 +80,9 @@ export const LeftMenu: React.FC<LeftMenuProps> = (props) => {
               className={clazz.name === selectedMeta?.name ? "selected" : ""}
               key={clazz.name}
               id={clazz.name}
-              onClick={() => changeSelectedMeta(clazz)}
+              onClick={() => {
+                changeSelectedMeta(clazz);
+              }}
             >
               <div className="api-name">
                 <div className="name">{clazz.name}</div>

@@ -4,6 +4,7 @@
   "description": "pont spec",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
+  "type": "module",
   "scripts": {
     "watch": "tsc --build --watch",
     "clean": "rimraf lib && rimraf tsconfig.tsbuildinfo",

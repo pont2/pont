@@ -1,10 +1,11 @@
 import { createContainer } from "unstated-next";
 import * as React from "react";
 import * as spec from "../mocks/spec.json";
-import { PontSpec, Interface, BaseClass } from "pont-spec";
+import { PontSpec, Interface, BaseClass, Mod } from "pont-spec";
 
 const useCurrentSpec = (specs: PontSpec[]) => {
   const [currSpec, changeCurrSpec] = React.useState(specs[0]);
+  console.log(spec);
 
   React.useEffect(() => {
     if (specs.length) {
@@ -26,7 +27,9 @@ const useCurrentSpec = (specs: PontSpec[]) => {
 
 const useContext = () => {
   const specs = [spec as any] as PontSpec[];
+  console.log(spec);
   const [selectedMeta, changeSelectedMeta] = React.useState(null as any as Interface | BaseClass);
+  const [selectModule, changeSelectModule] = React.useState(null as any as Mod);
   const { currSpec, changeCurrSpec } = useCurrentSpec(specs);
 
   return {
@@ -35,6 +38,8 @@ const useContext = () => {
     currSpec,
     selectedMeta,
     changeSelectedMeta,
+    selectModule,
+    changeSelectModule,
   };
 };
 

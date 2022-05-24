@@ -9,6 +9,7 @@
     "changelog": "node -r esm scripts/changelog.js",
     "build": "lerna exec --stream -- tsc --build --verbose",
     "start": "tsc --build -w",
+    "vs-ui": "cd packages/vscode-pont-ui && npm run dev",
     "clean": "lerna clean && rimraf ./node_modules",
     "lint": "prettier --write --parser typescript \"packages/**/*.ts\"",
     "release:all": "npm run release && npm run release:vscode",
@@ -38,13 +39,16 @@
   "devDependencies": {
     "@types/commander": "^2.12.2",
     "@types/fs-extra": "^5.1.0",
+    "@types/lodash": "^4.14.182",
+    "@types/node": "^17.0.33",
     "commander": "^9.2.0",
     "lerna": "^4.0.0",
+    "less": "^4.1.2",
+    "lint-staged": "^12.4.1",
     "lodash": "*",
     "pont-engine": "^1.2.0",
     "rimraf": "3.0.2",
     "typescript": "^4.6.4",
     "yorkie": "^2.0.0"
-  },
-  "dependencies": {}
+  }
 }

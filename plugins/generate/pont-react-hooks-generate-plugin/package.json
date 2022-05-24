@@ -14,7 +14,12 @@
     "pont-generate-core": "*",
     "pont-spec": "*"
   },
-  "files": [],
+  "peerDependencies": {
+    "pont-manager": "*"
+  },
+  "files": [
+    "lib"
+  ],
   "keywords": [],
   "author": "jasonHzq",
   "license": "MIT",

@@ -11,10 +11,15 @@
     "build": "npm run clean && tsc --build"
   },
   "dependencies": {
-    "pont-manager": "*",
+    "oas-spec-ts": "*",
     "pont-spec": "*"
   },
-  "files": [],
+  "peerDependencies": {
+    "pont-manager": "*"
+  },
+  "files": [
+    "lib"
+  ],
   "keywords": [],
   "author": "jasonHzq",
   "license": "MIT",

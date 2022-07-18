@@ -10,7 +10,8 @@
     "clean": "rimraf lib && rimraf tsconfig.tsbuildinfo",
     "build:commonjs": "tsc -p ./tsconfig.lib.json",
     "build:commonjs:watch": "tsc -p ./tsconfig.lib.json -w",
-    "build": "npm run clean && tsc --build && tsc -m CommonJS --outDir lib"
+    "build": "npm run clean && tsc --build && tsc -m CommonJS --outDir lib",
+    "build:doc": "pnpx typedoc --plugin typedoc-plugin-markdown --out docs src/index.ts"
   },
   "peerDependencies": {
     "lodash": "*"
@@ -29,6 +30,8 @@
   "license": "MIT",
   "devDependencies": {
     "@types/lodash": "*",
+    "typedoc": "^0.23.8",
+    "typedoc-plugin-markdown": "^3.13.3",
     "typescript": "^4.6.4"
   }
 }
